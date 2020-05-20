@@ -3,10 +3,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Institution institution = new Institution("Институт", "г. Город");
         Student student = new Student("");
 
@@ -45,21 +50,7 @@ public class Main {
         System.out.println("\nпредмет " + institution.getCourse("Физика").getName() + " ведёт:");
         System.out.println(institution.getCourse("Физика").getLecturer().getName());
 
-
-        try {
-            File file = new File("C:/Users/Галина/IdeaProjects/testis/src/Students.txt");
-            FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
-            String line = reader.readLine();
-            while (line != null) {
-                institution.addNewStudents(new Student(line));
-                line = reader.readLine();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(institution.getNewStudents());
+        List<String> lines = Files.readAllLines(Paths.get("C:/Users/Галина/IdeaProjects/testis/src/Students.txt"), UTF_8);
+        System.out.println("\n" + lines);
     }
 }
