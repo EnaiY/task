@@ -7,7 +7,6 @@ public class Institution  {
     private ArrayList<Course> courses = new ArrayList<Course>();
     private ArrayList<Student> students = new ArrayList<Student>();
     private ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>();
-    private ArrayList<Student> newStudents = new ArrayList<Student>();
 
     public Institution(String name, String address) {
         this.name = name;
