@@ -47,7 +47,7 @@ public class Main {
 
         System.out.println("\nНовые поступающие студенты:");
         try {
-            File file = new File("C:/Users/Галина/IdeaProjects/testis/src/Students.txt");
+            File file = new File("(somepath)/Students.txt");
             FileReader fr = new FileReader(file);
             BufferedReader reader = new BufferedReader(fr);
             String line = reader.readLine();
