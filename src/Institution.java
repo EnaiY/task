@@ -46,19 +46,17 @@ public class Institution  {
     }
 
     public Student getStudents(int id) {
-        return students.get(id);
-        //students.stream().filter(c -> c.getId() == id).findFirst().get();
+        students.stream().filter(c -> c.getId() == id).findFirst().get();
     }
 
     public ArrayList<Student> getAllStudents() {
         for (int i = 0; i <= 3; i++) {
-            System.out.println(students.get(i));
+            return students.get(i);
         }
-        return null;
     }
 
     public Lecturer getLecturers(int id) {
-        return lecturers.get(id);//lecturers.stream().filter(c -> c.getId() == id).findFirst().get();
+        lecturers.stream().filter(c -> c.getId() == id).findFirst().get();
     }
 
     public ArrayList<Lecturer> getAllLecturers() {
